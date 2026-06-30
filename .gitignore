@@ -25,3 +25,4 @@ moc_predefs.h
 *.tmp
 .vscode/
 .idea/
+software/BMS/QCustomPlot/qcustomplot/documentation/html/
