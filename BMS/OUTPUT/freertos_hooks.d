@@ -1,0 +1,12 @@
+.\output\freertos_hooks.o: DRIVER\src\freertos_hooks.c
+.\output\freertos_hooks.o: .\FreeRTOS\include\FreeRTOS.h
+.\output\freertos_hooks.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\output\freertos_hooks.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\output\freertos_hooks.o: .\FreeRTOS\include\FreeRTOSConfig.h
+.\output\freertos_hooks.o: .\FreeRTOS\include\projdefs.h
+.\output\freertos_hooks.o: .\FreeRTOS\include\portable.h
+.\output\freertos_hooks.o: .\FreeRTOS\include\deprecated_definitions.h
+.\output\freertos_hooks.o: .\FreeRTOS\portable\RVDS\ARM_CM3\portmacro.h
+.\output\freertos_hooks.o: .\FreeRTOS\include\mpu_wrappers.h
+.\output\freertos_hooks.o: .\FreeRTOS\include\task.h
+.\output\freertos_hooks.o: .\FreeRTOS\include\list.h

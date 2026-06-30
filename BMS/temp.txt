@@ -1,0 +1,1 @@
+Legacy copy removed. See DRIVER\src\Communicate.c for the active implementation.

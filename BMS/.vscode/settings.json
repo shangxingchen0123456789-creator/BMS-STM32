@@ -1,0 +1,17 @@
+{
+    "files.associations": {
+        "stm32f10x.h": "c",
+        "iic.h": "c",
+        "stdint.h": "c",
+        "limits": "c",
+        "memory": "c",
+        "string": "c",
+        "delay.h": "c",
+        "bq76940.h": "c",
+        "math.h": "c",
+        "led.h": "c",
+        "usart.h": "c",
+        "string.h": "c",
+        "stdio.h": "c"
+    }
+}

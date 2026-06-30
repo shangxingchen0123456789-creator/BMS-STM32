@@ -1,0 +1,274 @@
+/* ============================================================
+   BMS 电池管理系统 — 深色科技主题
+   ============================================================ */
+
+/* ---------- 全局 ---------- */
+QWidget {
+    background-color: #1e1e2e;
+    color: #e0e0e0;
+    font-family: "Microsoft YaHei", "Segoe UI", sans-serif;
+    font-size: 10pt;
+}
+
+QMainWindow {
+    background-color: #1e1e2e;
+}
+
+/* ---------- GroupBox ---------- */
+QGroupBox {
+    background-color: #2b2d3a;
+    border: 1px solid #3d3f50;
+    border-radius: 6px;
+    margin-top: 14px;
+    padding-top: 14px;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    left: 12px;
+    padding: 2px 8px;
+    color: #4fc3f7;
+    font-weight: bold;
+    font-size: 11pt;
+}
+
+/* ---------- TabWidget ---------- */
+QTabWidget::pane {
+    background-color: #2b2d3a;
+    border: 1px solid #3d3f50;
+    border-radius: 4px;
+    top: -1px;
+}
+
+QTabBar::tab {
+    background-color: #2b2d3a;
+    color: #a0a0b0;
+    border: 1px solid #3d3f50;
+    border-bottom: none;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    padding: 8px 20px;
+    margin-right: 2px;
+    font-size: 10pt;
+}
+
+QTabBar::tab:selected {
+    background-color: #363849;
+    color: #4fc3f7;
+    font-weight: bold;
+    border-bottom: 2px solid #4fc3f7;
+}
+
+QTabBar::tab:hover:!selected {
+    background-color: #333545;
+    color: #e0e0e0;
+}
+
+/* ---------- 按钮 ---------- */
+QPushButton {
+    background-color: #363849;
+    color: #e0e0e0;
+    border: 1px solid #4a4c5e;
+    border-radius: 4px;
+    padding: 6px 14px;
+    min-height: 28px;
+    font-size: 10pt;
+}
+
+QPushButton:hover {
+    background-color: #434560;
+    border-color: #4fc3f7;
+    color: #ffffff;
+}
+
+QPushButton:pressed {
+    background-color: #4fc3f7;
+    color: #1e1e2e;
+}
+
+QPushButton:disabled {
+    background-color: #2a2c3a;
+    color: #5a5a6a;
+    border-color: #3a3c4a;
+}
+
+/* 连接按钮特殊强调 */
+QPushButton#btnConnect {
+    background-color: #2e7d32;
+    border-color: #43a047;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+QPushButton#btnConnect:hover {
+    background-color: #388e3c;
+    border-color: #66bb6a;
+}
+
+QPushButton#btnConnect:pressed {
+    background-color: #66bb6a;
+    color: #1e1e2e;
+}
+
+/* ---------- 输入框/只读数据 ---------- */
+QLineEdit {
+    background-color: #363849;
+    color: #e0f7fa;
+    border: 1px solid #4a4c5e;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-family: "Consolas", "Courier New", monospace;
+    font-size: 11pt;
+}
+
+QLineEdit:focus {
+    border-color: #4fc3f7;
+}
+
+QLineEdit:read-only {
+    background-color: #2f3142;
+}
+
+/* ---------- ComboBox ---------- */
+QComboBox {
+    background-color: #363849;
+    color: #e0e0e0;
+    border: 1px solid #4a4c5e;
+    border-radius: 4px;
+    padding: 4px 8px;
+    min-height: 24px;
+}
+
+QComboBox:hover {
+    border-color: #4fc3f7;
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: center right;
+    width: 24px;
+    border-left: 1px solid #4a4c5e;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+QComboBox::down-arrow {
+    width: 10px;
+    height: 10px;
+}
+
+QComboBox QAbstractItemView {
+    background-color: #2b2d3a;
+    color: #e0e0e0;
+    border: 1px solid #4a4c5e;
+    selection-background-color: #4fc3f7;
+    selection-color: #1e1e2e;
+}
+
+/* ---------- SOC 进度条 ---------- */
+QProgressBar {
+    background-color: #2a2c3a;
+    border: 1px solid #4a4c5e;
+    border-radius: 8px;
+    text-align: center;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 12pt;
+    min-height: 22px;
+}
+
+QProgressBar::chunk {
+    background: qlineargradient(
+        x1:0, y1:0, x2:1, y2:0,
+        stop:0 #0288d1, stop:1 #4fc3f7
+    );
+    border-radius: 7px;
+}
+
+/* ---------- 调试信息 / 日志 ---------- */
+QTextEdit {
+    background-color: #1a1b26;
+    color: #a9b1d6;
+    border: 1px solid #3d3f50;
+    border-radius: 4px;
+    font-family: "Consolas", "Courier New", monospace;
+    font-size: 9pt;
+    padding: 4px;
+}
+
+/* ---------- Label ---------- */
+QLabel {
+    color: #b0b8c8;
+    background: transparent;
+    font-size: 10pt;
+}
+
+/* ---------- Splitter ---------- */
+QSplitter::handle {
+    background-color: transparent;
+}
+
+/* ---------- ScrollBar ---------- */
+QScrollBar:vertical {
+    background-color: #1e1e2e;
+    width: 10px;
+    border-radius: 5px;
+}
+
+QScrollBar::handle:vertical {
+    background-color: #4a4c5e;
+    border-radius: 5px;
+    min-height: 30px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background-color: #5a5c6e;
+}
+
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical {
+    height: 0;
+}
+
+QScrollBar:horizontal {
+    background-color: #1e1e2e;
+    height: 10px;
+    border-radius: 5px;
+}
+
+QScrollBar::handle:horizontal {
+    background-color: #4a4c5e;
+    border-radius: 5px;
+    min-width: 30px;
+}
+
+QScrollBar::handle:horizontal:hover {
+    background-color: #5a5c6e;
+}
+
+QScrollBar::add-line:horizontal,
+QScrollBar::sub-line:horizontal {
+    width: 0;
+}
+
+/* ---------- StatusBar ---------- */
+QStatusBar {
+    background-color: #252738;
+    color: #8890a0;
+    border-top: 1px solid #3d3f50;
+    font-size: 9pt;
+    padding: 2px 8px;
+}
+
+/* ---------- MenuBar ---------- */
+QMenuBar {
+    background-color: #252738;
+    color: #b0b8c8;
+    border-bottom: 1px solid #3d3f50;
+}
+
+QMenuBar::item:selected {
+    background-color: #363849;
+    color: #4fc3f7;
+}

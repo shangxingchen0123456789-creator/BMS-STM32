@@ -1,0 +1,60 @@
+#pragma once
+#include <QtGlobal>
+#include <QByteArray>
+#include <QVector>
+
+
+namespace BmsProto {
+
+// ===== 命令码（按你�?Communicate.h 调整数值） =====
+enum : quint8 {
+    CMD_PING          = 0x01,
+    CMD_STREAM_START  = 0x02,
+    CMD_STREAM_STOP   = 0x03,
+
+    CMD_CHG_ON        = 0x10,
+    CMD_CHG_OFF       = 0x11,
+    CMD_DSG_ON        = 0x12,
+    CMD_DSG_OFF       = 0x13,
+
+    CMD_READ_ONCE     = 0x20,
+    CMD_ACK           = 0x81,
+    CMD_TELEMETRY     = 0x90
+};
+
+enum : quint8 {
+    COMM_OK = 0x00
+};
+
+static const quint8 MAGIC0 = 0x55;
+static const quint8 MAGIC1 = 0xAA;
+
+// ===== CRC16-IBM（Modbus�?=====
+quint16 crc16IBM(const quint8* data, int len);
+
+// ===== 打包�?=====
+QByteArray makeFrame(quint8 cmd, quint8 seq, const QByteArray& payload);
+
+// ===== 遥测数据结构 =====
+struct Telemetry {
+    quint8  chg_enable = 0;
+    quint8  dsg_enable = 0;
+    quint8  soc = 0;
+
+    // 若为 0x8000 则无效（此处�?std::optional 等价�?32768 表示无效�?    qint16  pack_voltage = -32768;
+    qint16  current      = -32768;
+    qint16  t0_x10       = -32768;
+    qint16  t1_x10       = -32768;
+    qint16  t2_x10       = -32768;
+
+    QVector<qint16> cell_mv;  // N 个，单位�?pack_voltage 保持一致（常见 mV�?    quint16 alerts = 0;
+    quint8  r0 = 0;
+    quint8  r1 = 0;
+};
+
+// 解析遥测负载（小端）——抛�?std::runtime_error 当长度非�?Telemetry parseTelemetry(const QByteArray& payload);
+
+// 小工�?inline bool isInvalid(qint16 v) { return v == qint16(0x8000); }
+
+} // namespace BmsProto
+
